@@ -68,6 +68,7 @@
      with-editor
      ; appearance
      moe-theme
+     ;leuven-theme
      nyan-mode
      powerline
      ; stuff to check out
@@ -114,6 +115,7 @@
 
 ;appearance
 (require 'setup-moe)
+;(require 'leuven-theme)
 
 (require 'nyan-mode)
 (nyan-mode)
