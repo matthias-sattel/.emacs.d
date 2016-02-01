@@ -17,6 +17,9 @@
 ;; Set up appearance early
 ;(require 'appearance)
 
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
 ;; Write backup files to own directory
 (setq backup-directory-alist
       `(("." . ,(expand-file-name
@@ -63,6 +66,7 @@
      seq
      spinner
      with-editor
+     moe-theme
      ;paredit
      ;move-text				
      ;gist
@@ -103,5 +107,7 @@
   (error
    (package-refresh-contents)
    (init--install-packages)))
+
+(require 'moe-theme)
 
 (require 'customization)
