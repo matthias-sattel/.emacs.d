@@ -66,7 +66,11 @@
      seq
      spinner
      with-editor
+     ; appearance
      moe-theme
+     nyan-mode
+     powerline
+     ; stuff to check out
      ;paredit
      ;move-text				
      ;gist
@@ -108,6 +112,14 @@
    (package-refresh-contents)
    (init--install-packages)))
 
-(require 'moe-theme)
+;appearance
+(require 'setup-moe)
+
+(require 'nyan-mode)
+(nyan-mode)
+(nyan-start-animation)
+
+(require 'powerline)
+(powerline-moe-theme)
 
 (require 'customization)
