@@ -113,7 +113,8 @@
    (package-refresh-contents)
    (init--install-packages)))
 
-;appearance
-(require 'appearance)
 
 (require 'customization)
+
+;appearance
+(require 'appearance)
