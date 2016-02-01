@@ -114,14 +114,6 @@
    (init--install-packages)))
 
 ;appearance
-(require 'setup-moe)
-;(require 'leuven-theme)
-
-(require 'nyan-mode)
-(nyan-mode)
-(nyan-start-animation)
-
-(require 'powerline)
-(powerline-moe-theme)
+(require 'appearance)
 
 (require 'customization)
