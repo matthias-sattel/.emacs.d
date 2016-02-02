@@ -13,10 +13,10 @@
 (setq org-clock-persist 'history)
 (org-clock-persistence-insinuate)
 
-(setq org-directory (if user-org-dir
+(setq org-directory (if (boundp 'user-org-dir)
 			user-org-dir
 		      "~/Documents/Org"))
-(setq org-agenda-files (list (if user-org-agenda-dir
+(setq org-agenda-files (list (if (boundp 'user-org-agenda-dir)
 				  user-org-agenda-dir
 				"~/Documents/Org")))
 ;(setq org-agenda-files (list "c:/dev/org/Improvements.org"
