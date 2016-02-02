@@ -79,9 +79,9 @@
      ;htmlize
      ;visual-regexp
      ;; fill-column-indicator
-     ;; flycheck
-     ;; flycheck-pos-tip
-     ;; flycheck-clojure
+     flycheck
+     flycheck-pos-tip
+     ;flycheck-clojure
      ;; flx
      ;; f
      ;; flx-ido
@@ -119,7 +119,10 @@
 
 ;org mode
 (eval-after-load 'org '(require 'setup-org))
+
 ;(require 'setup-org)
+
+(eval-after-load 'flycheck '(require 'setup-flycheck))
 
 ;appearance
 (require 'appearance)
