@@ -59,6 +59,7 @@
      markdown-mode
      multiple-cursors
      org-projectile
+     ;org-habit
      pkg-info
      pretty-lambdada
      projectile
@@ -115,6 +116,10 @@
 
 
 (require 'customization)
+
+;org mode
+(eval-after-load 'org '(require 'setup-org))
+;(require 'setup-org)
 
 ;appearance
 (require 'appearance)
