@@ -3,3 +3,10 @@
 
 # Packaging
 .cask
+
+# temporary files
+**/*~
+elpa/
+server/
+url/
+/projectile.cache
