@@ -24,4 +24,6 @@
 
 (define-key global-map (kbd "M-<f6>") 'org-capture)
 
+(setq org-log-done t)
+
 (provide 'setup-org)
