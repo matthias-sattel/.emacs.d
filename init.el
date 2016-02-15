@@ -105,7 +105,8 @@
      ;; prodigy
      ;; cider
      ;; yesql-ghosts
-     ;string-edit
+					;string-edit
+     adoc-mode
      )))
 
 (condition-case nil
@@ -123,6 +124,8 @@
 ;(require 'setup-org)
 
 (eval-after-load 'flycheck '(require 'setup-flycheck))
+
+(add-to-list 'auto-mode-alist '("\\.adoc\\'" . adoc-mode))
 
 ;appearance
 (require 'appearance)
