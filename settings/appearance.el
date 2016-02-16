@@ -17,7 +17,7 @@
 (moe-light)
 
 (nyan-mode)
-(nyan-start-animation)
+(nyan-stop-animation)
 (powerline-moe-theme)
 
 ;; Set custom theme path
