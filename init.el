@@ -118,6 +118,8 @@
 
 (require 'customization)
 
+(require 'setup-helm)
+
 ;org mode
 (eval-after-load 'org '(require 'setup-org))
 
