@@ -131,3 +131,10 @@
 
 ;appearance
 (require 'appearance)
+
+(setq org-capture-templates
+      '(
+	  ("b" "Bookmark" entry (file+headline "~/Documents/Org/notes.org" "Bookmarks")
+	   "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n" :empty-lines 1)
+	  )
+	)
