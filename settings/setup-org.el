@@ -26,4 +26,21 @@
 
 (setq org-log-done t)
 
+(setq org-capture-templates
+      '(
+	("a" "Anleitung" entry (file+headline "~/Documents/Org/wissen.org" "Anleitung")
+	 "* %?\nBeschreibung:\nErstellt am %U\n\n" :empty-lines 1)
+	("b" "Bookmark" entry (file+headline "~/Documents/Org/notes.org" "Bookmarks")
+	 "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n" :empty-lines 1)
+	("s" "System" entry (file+headline "~/Documents/Org/adesso.org" "System")
+	 "* %?\n:Beschreibung:\n:Hostname:\n:IP:\n:Anmeldedaten:\n:END:\n\n" :empty-lines 1)
+	("t" "Aufgabe" entry (file+headline "~/Documents/Org/gtd.org" "Inbox")
+	 "* TODO %?")
+	("z" "Zeiteintrag in gtd.org" entry (file+headline "~/Documents/Org/gtd.org" "Inbox")
+	 "* ZKTO %? \n  %i" :clock-in t :clock-resume t)
+	("j" "Journal" entry (file+datetree "~/Documents/Org/journal.org")
+	 "* %?\nEntered on %U\n  %i")
+	)
+      )
+
 (provide 'setup-org)

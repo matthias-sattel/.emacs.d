@@ -1,4 +1,5 @@
-(package-initialize)
+;;(setq package-enable-at-startup nil)
+;;(package-initialize)
 
 ;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
@@ -18,7 +19,19 @@
 ;(require 'appearance)
 
 (custom-set-variables
- '(initial-frame-alist (quote ((fullscreen . maximized)))))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (tango)))
+ '(custom-safe-themes
+   (quote
+    ("9527feeeec43970b1d725bdc04e97eb2b03b15be982ac50089ad223d3c6f2920" default)))
+ '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
+ '(package-selected-packages
+   (quote
+    (yaml-mode puppet-mode pretty-lambdada powerline org-projectile nyan-mode multiple-cursors moe-theme markdown-mode magit-find-file magit-filenotify helm-projectile helm-firefox flycheck-pos-tip expand-region company clojure-cheatsheet auto-complete adoc-mode))))
 
 ;; Write backup files to own directory
 (setq backup-directory-alist
@@ -34,17 +47,23 @@
 (setq save-place-file (expand-file-name ".places" user-emacs-directory))
 
 ;; Setup packages
+(require 'package)
+(package-initialize)
+(when (not (package-installed-p 'dash))
+      (package-install 'dash))
+
 (require 'setup-package)
 
 ;; Install extensions if they're missing
 (defun init--install-packages ()
   (packages-install
-   '(async
+   '(auto-complete
+     async
      cider
      clojure-cheatsheet
      clojure-mode
      company
-     dash
+     ;;dash
      epl
      expand-region
      git-commit
@@ -63,6 +82,7 @@
      pkg-info
      pretty-lambdada
      projectile
+     puppet-mode
      queue
      seq
      spinner
@@ -107,6 +127,7 @@
      ;; yesql-ghosts
 					;string-edit
      adoc-mode
+     yaml-mode
      )))
 
 (condition-case nil
@@ -132,9 +153,9 @@
 ;appearance
 (require 'appearance)
 
-(setq org-capture-templates
-      '(
-	  ("b" "Bookmark" entry (file+headline "~/Documents/Org/notes.org" "Bookmarks")
-	   "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n" :empty-lines 1)
-	  )
-	)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

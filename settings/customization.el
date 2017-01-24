@@ -1,7 +1,8 @@
 (add-to-list 'load-path "/usr/share/emacs/site-lisp")
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+
 (require 'auto-complete-config)
 (ac-config-default)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -72,7 +73,7 @@
 (eval-after-load 'clojure-mode
   '(progn
      (define-key clojure-mode-map (kbd "C-c C-h") #'clojure-cheatsheet)))
-(load-file "~/.emacs.d/cider.el")
+;(load-file "~/.emacs.d/cider.el")
 
 ;company mode enabled globally
 (add-hook 'after-init-hook 'global-company-mode)
