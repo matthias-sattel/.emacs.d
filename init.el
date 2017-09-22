@@ -12,6 +12,8 @@
 (setq settings-dir
       (expand-file-name "settings" user-emacs-directory))
 
+
+
 ;; Set up load path
 (add-to-list 'load-path settings-dir)
 
@@ -128,6 +130,13 @@
 					;string-edit
      adoc-mode
      yaml-mode
+     org-jira
+     powershell
+     plantuml-mode
+
+     ;; JavaScript support
+     js2-mode
+     js2-refactor
      )))
 
 (condition-case nil
@@ -144,6 +153,9 @@
 ;org mode
 (eval-after-load 'org '(require 'setup-org))
 
+;plantuml mode
+(require 'setup-plantuml)
+
 ;(require 'setup-org)
 
 (eval-after-load 'flycheck '(require 'setup-flycheck))
@@ -152,5 +164,16 @@
 
 ;appearance
 (require 'appearance)
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(require 'setup-jira)
+
+(require 'setup-js2)
 
 (setq next-line-add-newlines t)
